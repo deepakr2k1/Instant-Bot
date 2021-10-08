@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Colors */
+    --bg: #1a1a1a;
+    --cardColor: #FAF9F9;
+    --btn: #47b988;
+    --btnHover: #41a87c;
+    --cancel: rgb(200, 3, 3);
+    --cancelHover: rgb(180, 0, 0);
+    
+    /* Space Size */
+    --space1: 5px;
+    --space2: 10px;
+    --space3: 15px;
+    --space4: 20px;
+    --space5: 25px;
+    --space6: 30px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+title {
+    display: none;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.main {
+    width: max(90%, 500px);
+    text-align: center;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+input {
+    outline: none;
+    padding: 0px 4px;
+}
+select {
+    outline: none;
+}
+
+button {
+    padding: 4px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+h1 {
+    color: whitesmoke;
+    margin: 8px auto;
+}
+
+.btn {
+    color: white;
+    background: var(--btn);
+}
+.btn:hover {
+    background: var(--btnHover);
+}
+
+.cancel-btn {
+    color: white;
+    background: var(--cancel);
+}
+.cancel-btn:hover {
+    background: var(--cancelHover);
+}
+
+.err {
+    font-size: 12px;
+    margin-top: 1px !important;
+    color: rgb(199, 42, 42);
+    text-align: left;
+}
+
+.home-img {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 32px;
+}

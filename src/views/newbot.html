@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new Bot</title>
+    <link rel="icon" href="../assets/icon.ico">
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/newbot.css">
+    <!-- Scripts -->
+    <script type="text/javascript" src="../eel.js"></script>
+    <script type="text/javascript" src="../scripts/newbot.js"></script>
+</head>
+<body>
+
+    <a href="index.html">
+        <img class="home-img cursor" src="../assets/home_icon.png">
+    </a>
+
+    <div class="bg-modal">
+        <div class="modal-content">
+            <h4>Name Your Bot</h4>
+            <input id="bot_name" type="text" placeholder="Enter your bot name">
+            <span id="bot_name_err" class="err" style="display: none;"></span>
+            <button class="btn" onclick="createBot()">Continue</button>
+        </div>
+    </div>
+    
+    <div class="main">
+        <h1>Create a new Bot</h1>
+        <div>
+            <div id="events" class="list-container">
+            </div>
+            <div class="list-container">
+                <div id="create_event" class="card" style="display: none;">
+                    <div>
+                        <p>Event Name: </p>
+                        <input placeholder="Enter Event Name" id="event_name" type="text">
+                    </div>
+                    <div>
+                        <p>Event Type: </p>
+                        <select id="event_type" onchange="changeEventType()">
+                            <option value="">Select Event Type</option>
+                            <option value="click">Click</option>
+                            <option value="right_click">Right Click</option>
+                            <option value="double_click">Double Click</option>
+                            <option value="triple_click">Triple Click</option>
+                            <option value="type_write">Type Write</option>
+                            <!-- <option value="hotkey">Press Keys</option>
+                            <option value="sleep">Sleep</option> -->
+                        </select>
+                    </div>
+                    <div class="pos">
+                        <p>Position: </p>
+                        <div class="coordinates">
+                            X :&ensp;<span id="x">--</span>&emsp;
+                            Y :&ensp;<span id="y">--</span>
+                        </div>
+                    </div>
+                    <div class="typewrite" style="display: none;">
+                        <p>Type-write Text: </p>
+                        <input id="typewrite_text"placeholder="Enter Type-write Text"  type="text">
+                    </div>
+                    <div>
+                        <p>Sleep After Event: </p>
+                        <input id="sleep" type="number" min="0.1" max="300" step="0.1">
+                        &ensp;Seconds
+                    </div>
+                    <div>
+                        <button class="btn" onclick="saveEvent()">Save</button>
+                        <button class="cancel-btn" onclick="cancel()">Cancel</button>
+                    </div>
+                    <div>
+                        <span id="create_event_err" class="err" style="display: none;"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="add_event" class="card cursor">
+                <span>ADD</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
