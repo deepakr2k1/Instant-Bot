@@ -68,8 +68,12 @@ def getAllBots():
 # Run a bot for given iterations
 @eel.expose
 def runBot(allEvents, iterations):
-    # Sleep for 3 sec before starting script
-    pa.sleep(3);
+    # Sleep for 3 sec before starting script and minimise the current window
+    pa.sleep(1);
+    pa.hotkey('win', 'down');
+    pa.hotkey('win', 'down');
+    pa.sleep(2);
+
     for i in range(iterations):
         for event in allEvents:
             type = event['type'];
