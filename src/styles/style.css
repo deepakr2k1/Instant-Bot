@@ -93,3 +93,10 @@ h1 {
     left: 12px;
     width: 32px;
 }
+
+.info {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
