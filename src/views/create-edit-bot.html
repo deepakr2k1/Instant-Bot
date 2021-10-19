@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Bot</title>
+    <link rel="icon" href="../assets/icon.ico">
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/create-edit-bot.css">
+    <!-- Scripts -->
+    <script type="text/javascript" src="../eel.js"></script>
+    <script type="text/javascript" src="../scripts/create-edit-bot.js"></script>
+</head>
+<body>
+
+    <!-- Back Button -->
+    <a href="index.html">
+        <img class="home-img cursor" src="../assets/chevron_left_black_24dp.svg">
+    </a>
+    
+    <!-- Bot Name modal -->
+    <div class="bg-modal" id="bot_name_popup" style="display: none;">
+        <div class="modal-content">
+            <h4>Name Your Bot</h4>
+            <input id="bot_name" type="text" placeholder="Enter your bot name">
+            <span id="bot_name_err" class="err" style="display: none;"></span>
+            <button class="btn" onclick="createBot()">Continue</button>
+        </div>
+    </div>
+    
+    <!-- create/Edit Event modal -->
+    <div class="bg-modal" id="event_popup" style="display: none;">
+        <div id="create_event" class="card">
+            <div>
+                <p>Event Name: </p>
+                <input placeholder="Enter Event Name" id="event_name" type="text">
+            </div>
+            <div>
+                <p>Event Type: </p>
+                <select id="event_type" onchange="changeEventType()">
+                    <option value="">Select Event Type</option>
+                    <option value="click">Click</option>
+                    <option value="right_click">Right Click</option>
+                    <option value="double_click">Double Click</option>
+                    <option value="triple_click">Triple Click</option>
+                    <option value="type_write">Type Write</option>
+                    <!-- <option value="hotkey">Press Keys</option>
+                    <option value="sleep">Sleep</option> -->
+                </select>
+            </div>
+            <div class="pos">
+                <p>Position: <img class="info" src="../assets/info.png" title="Press 'Ctrl' + 'Enter' to 
+get the cursor position"> </p>
+                <div class="coordinates">
+                    X :&ensp;<span id="x">--</span>&emsp;
+                    Y :&ensp;<span id="y">--</span>
+                </div>
+            </div>
+            <div class="typewrite" style="display: none;">
+                <p>Type-write Text: </p>
+                <input id="typewrite_text"placeholder="Enter Type-write Text"  type="text">
+            </div>
+            <div>
+                <p>Sleep After Event: </p>
+                <input id="sleep" type="number" min="0.1" max="300" step="0.1">
+                &ensp;Seconds
+            </div>
+            <div>
+                <button class="btn" onclick="saveEvent()">Save</button>
+                <button class="cancel-btn" onclick="cancel()">Cancel</button>
+            </div>
+            <div>
+                <span id="create_event_err" class="err" style="display: none;"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Event Modal -->
+    <div class="bg-modal" id="del_modal" style="display: none;">
+        <div class="modal-content">
+            <p>Are you sure you want to delete this event</p>
+            <p>This action cannot be revert</p>
+            <div class="flex">
+                <button onclick="cancelDelEvent()" >cancel</button>
+                <button onclick="delEvent()" class="cancel-btn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Events list -->
+    <div class="main">
+        <h1 id="heading">Edit Bot</h1>
+        <div>
+            <div id="events" class="list-container">
+                <div class="event_list_row">
+                    <span>Event Name</span>
+                    <span>Event Type</span>
+                    <span>Action</span>
+                    <span>Sleep after event</span>
+                </div>
+            </div>
+            <div>
+                <img id="add_event" title="Add Event" class="cursor" src="../assets/add_circle_outline_black_24dp.svg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

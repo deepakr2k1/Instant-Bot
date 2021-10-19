@@ -33,17 +33,56 @@ def saveBot(bot):
     with open(full_path, 'wb') as file:
         pickle.dump(bot, file);
 
+# Edit Bot
+@eel.expose
+def editBot(idx):
+    all_bots = getAllBots();
+    if idx >= 0 and idx < len(all_bots):
+        curr_bot["name"] = all_bots[idx]["name"];
+        curr_bot["events"] = all_bots[idx]["events"];
+        return curr_bot;
+
+# Delete Bot
+@eel.expose
+def delBot(idx):
+    all_bots = getAllBots();
+    if idx >= 0 and idx < len(all_bots):
+        file_name = all_bots[idx]["name"] + '.pkl';
+        full_path = root / "bots" / file_name;
+        if os.path.exists(full_path):
+            os.remove(full_path);
+            all_bots.pop(idx);
+            return all_bots;
+
 # Get cursor current position
 @eel.expose
 def getCurrPos():
     return pa.position();
 
-# Create new event
+# Get event data
 @eel.expose
-def createEvent(event):
+def getEventData(idx):
+    if idx >= 0 and idx < len(curr_bot["events"]):
+        return curr_bot["events"][idx];
+
+# Create/Edit events
+@eel.expose
+def createEditEvent(event, idx):
     if(event):
-        curr_bot["events"].append(event);
+        if(idx == -1):
+            curr_bot["events"].append(event);
+        elif(idx >= 0 and idx < len(curr_bot["events"])):
+            curr_bot["events"][idx] = event;
         saveBot(curr_bot);
+        return curr_bot["events"];
+
+# Delete event
+@eel.expose
+def delEvent(idx):
+    if idx >= 0 and idx < len(curr_bot["events"]):
+        curr_bot["events"].pop(idx);
+        saveBot(curr_bot);
+        return curr_bot["events"];
 
 # File Load & Run Bot
 

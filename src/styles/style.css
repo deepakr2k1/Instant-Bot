@@ -2,12 +2,13 @@
 
 :root {
     /* Colors */
-    --bg: #1a1a1a;
-    --cardColor: #FAF9F9;
+    --bg: #cecece;
+    --cardColor: #FAFAFA;
     --btn: #47b988;
     --btnHover: #41a87c;
     --cancel: rgb(200, 3, 3);
     --cancelHover: rgb(180, 0, 0);
+    --fontColor: rgb(22, 22, 22);
     
     /* Space Size */
     --space1: 5px;
@@ -60,7 +61,6 @@ button {
 }
 
 h1 {
-    color: whitesmoke;
     margin: 8px auto;
 }
 
@@ -99,4 +99,83 @@ h1 {
     width: 16px;
     height: 16px;
     vertical-align: middle;
+}
+
+.cursor:hover {
+    cursor: pointer;
+}
+
+.icon {
+    padding: 2px;
+    fill: var(--fontColor);
+}
+.icon:hover {
+    background-color: #e2e2e2;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* card */
+.card {
+    background-color: var(--cardColor);
+    width: 200px;
+    min-height: 100px;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    margin: 8px;
+    padding: 4px 0px 0px 0px;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.card div{
+    display: flex;
+    margin: 6px 12px;
+}
+
+.card p{
+    width: 50%;
+    text-align: left;
+}
+
+.card button {
+    width: 75px;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+/* Modal */
+.bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 250px;
+    background-color: white;
+    border-radius: 5px;
+    padding: var(--space2);
+    text-align: center;
+}
+
+.modal-content > * {
+    margin-top: var(--space1);
+    width: 100%;
+}
+
+/* Delete Modal */
+#del_modal .modal-content {
+    width: 300px;
+}
+#del_modal .flex {
+    margin-top: var(--space4);
+    justify-content: space-between;
+}
+#del_modal button {
+    width: 48%;
 }

@@ -7,15 +7,48 @@
     <title>Instant Bot</title>
     <link rel="icon" href="../assets/icon.ico">
     <!-- Style sheets -->
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/index.css">
     <!-- Scripts -->
     <script type="text/javascript" src="../eel.js"></script>
+    <script type="text/javascript" src="../scripts/index.js"></script>
 </head>
 <body>
-    <div class="right_block">
-        <h1>Instant Bot</h1>
-        <a href="newbot.html"><button class="btn">Create Bot</button></a>
-        <a href="runbot.html"><button class="btn">Run Bot</button></a>
+    <!-- Run bot modal -->
+    <div class="bg-modal" style="display: none;">
+        <div class="modal-content">
+            <h4>Run Bot</h4>
+            <div class="flex">
+                <p>Repeatition: </p>
+                <input id="iterations" type="number" placeholder="Iterations" min="1" max="500">
+            </div>
+            <span id="run_config_err" class="err" style="display: none;"></span>
+            <div class="flex btn-grp">
+                <button class="btn" onclick="run()">Run</button>
+                <button class="cancel-btn" onclick="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete bot Modal -->
+    <div class="bg-modal" id="del_modal" style="display: none;">
+        <div class="modal-content">
+            <p>Are you sure you want to delete this bot</p>
+            <p>This action cannot be revert</p>
+            <div class="flex">
+                <button onclick="cancelDelBot()" >cancel</button>
+                <button onclick="delBot()" class="cancel-btn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <h1>BOTS</h1>
+        <div class="all-bots" id="all_bots">
+            <div class="add_bot card cursor" onclick="createEditBot()">
+                <img src="../assets/add_black_24dp.svg"/>
+            </div>
+        </div>
     </div>
 </body>
 </html>

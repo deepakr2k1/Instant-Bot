@@ -1,0 +1,77 @@
+/* Modal */
+.modal-content > input {
+    width: 95%;
+}
+
+/* Event List container */
+.event_list_row {
+    padding-top: var(--space1);
+    padding-bottom: var(--space1);
+    padding-left: var(--space4);
+    border-bottom: 1px solid var(--fontColor);
+}
+.event_list_row span {
+    display: inline-flex;
+    width: 22%;
+}
+.event_list_row span img {
+    font-size: 10px;
+}
+.editDelOpt {
+    width: 5% !important;
+    text-align: right;
+}
+.editDelOpt img{
+    margin-right: 5px;
+    width: 18px;
+}
+
+#add_event {
+    font-size: 48px;
+    margin: var(--space1) auto;
+}
+
+.list-container {
+    width: 100%;
+    text-align: left;
+}
+
+/* Popup Card - create/edit event */
+.card {
+    width: 300px;
+    height: auto;
+    padding: 8px;
+}
+
+.card div{
+    margin: 8px 12px;
+}
+
+.card input, select{
+    width: 50%;
+    float: right;
+    font-size: 12px;
+}
+
+.card input{
+    margin-left: 8px;
+    padding: 1px 2px;
+}
+
+.card .coordinates {
+    margin: 0px;
+}
+
+#sleep {
+    width: 50px;
+    margin: 0px;
+}
+.main>div {
+    height: 80vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.main>div::-webkit-scrollbar {
+    display: none;
+}
