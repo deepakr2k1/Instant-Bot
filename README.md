@@ -1,8 +1,9 @@
-# Instant-Bot
-GUI Automation Application - A desktop application to take control on keyboard &amp;amp; mouse to finish repetitive tasks
+<h2> Instant-Bot </h2>
+<h4>GUI Automation Application</h4>
+A desktop application to take control on keyboard &amp;amp; mouse to finish repetitive tasks
 
-How to get this application in your PC?
-1. Install chrome browser in your PC
-2. Download this zip file: https://github.com/deepakrathore2k1/Instant-Bot/archive/refs/heads/master.zip
-3. Open Application file
-    Instant-Bot-master -> dist -> Instant Bot
+<h4>How to get this application in your PC?</h4>
+
+1. Install _chrome browser_ in your PC
+2. Download this zip file: _https://github.com/deepakrathore2k1/Instant-Bot/archive/refs/heads/master.zip_
+3. Run Application **Instant-Bot-master -> dist -> Instant Bot**
