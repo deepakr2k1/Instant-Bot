@@ -46,8 +46,7 @@
                     <option value="double_click">Double Click</option>
                     <option value="triple_click">Triple Click</option>
                     <option value="type_write">Type Write</option>
-                    <!-- <option value="hotkey">Press Keys</option>
-                    <option value="sleep">Sleep</option> -->
+                    <option value="hotkeys">Press Keys</option>
                 </select>
             </div>
             <div class="pos">
@@ -61,6 +60,44 @@ get the cursor position"> </p>
             <div class="typewrite" style="display: none;">
                 <p>Type-write Text: </p>
                 <input id="typewrite_text"placeholder="Enter Type-write Text"  type="text">
+            </div>
+            <div class="hotkeys" style="display: none;">
+                <p>Press hotkeys: </p>
+                <div class="key_sel_cont">
+                    <select id="key1">
+                        <option value="">Select Key 1</option>
+                        <option value="enter">Enter</option>
+                        <option value="ctrl">Ctrl</option>
+                        <option value="alt">Alt</option>
+                        <option value="shift">Shift</option>
+                        <option value="win">Win</option>
+                        <option value="space">Space</option>
+                        <option value="backspace">Backspace</option>
+                        <option value="escape">Escape</option>
+                    </select>
+                    <select id="key2">
+                        <option value="">Select Key 2</option>
+                        <option value="enter">Enter</option>
+                        <option value="ctrl">Ctrl</option>
+                        <option value="alt">Alt</option>
+                        <option value="shift">Shift</option>
+                        <option value="win">Win</option>
+                        <option value="space">Space</option>
+                        <option value="backspace">Backspace</option>
+                        <option value="escape">Escape</option>
+                    </select>
+                    <select id="key3">
+                        <option value="">Select Key 3</option>
+                        <option value="enter">Enter</option>
+                        <option value="ctrl">Ctrl</option>
+                        <option value="alt">Alt</option>
+                        <option value="shift">Shift</option>
+                        <option value="win">Win</option>
+                        <option value="space">Space</option>
+                        <option value="backspace">Backspace</option>
+                        <option value="escape">Escape</option>
+                    </select>
+                </div>
             </div>
             <div>
                 <p>Sleep After Event: </p>

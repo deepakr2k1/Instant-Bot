@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
         document.querySelector('.pos').style.display = 'flex';
         document.querySelector('.typewrite').style.display = 'none';
+        document.querySelector('.hotkeys').style.display = 'none';
     })
     
     // on enter press in botname input, call createBot() function
@@ -92,9 +93,15 @@ function changeEventType() {
     if(eventType == '' || eventType == 'click' || eventType == 'right_click' || eventType == 'double_click' || eventType == 'triple_click') {
         document.querySelector('.pos').style.display = 'flex';
         document.querySelector('.typewrite').style.display = 'none';
+        document.querySelector('.hotkeys').style.display = 'none';
     } else if(eventType == 'type_write') {
         document.querySelector('.pos').style.display = 'none';
         document.querySelector('.typewrite').style.display = 'flex';
+        document.querySelector('.hotkeys').style.display = 'none';
+    } else if(eventType == 'hotkeys') {
+        document.querySelector('.pos').style.display = 'none';
+        document.querySelector('.typewrite').style.display = 'none';
+        document.querySelector('.hotkeys').style.display = 'flex';
     }
 }
 
@@ -117,9 +124,16 @@ function saveEvent() {
     var eventName = document.getElementById('event_name').value;
     var eventType = document.getElementById('event_type').value;
     var typewriteText = document.getElementById('typewrite_text').value;
+    var hotkeys = [];
+    var key1 = document.getElementById('key1').value;
+    var key2 = document.getElementById('key2').value;
+    var key3 = document.getElementById('key3').value;
+    if(key1) {hotkeys.push(key1)};
+    if(key2) {hotkeys.push(key2)};
+    if(key3) {hotkeys.push(key3)};
     var sleepTime = document.getElementById('sleep').value;
-    if(!(eventName && sleepTime && ( (eventType != 'type_write' && coordinate && typeof(coordinate[0]) != 'undefined' && typeof(coordinate[1]) != 'undefined')  || (eventType == 'type_write' && typewriteText)))) {
-        saveEventErr.innerText = 'All fields required';
+    if(!(eventName && sleepTime && ( (eventType != 'type_write' && coordinate && typeof(coordinate[0]) != 'undefined' && typeof(coordinate[1]) != 'undefined')  || (eventType == 'type_write' && typewriteText) || (hotkeys.length > 0)))) {
+        saveEventErr.innerText = (hotkeys.length) ? 'All fields required' : 'Please select atleast on key';
         saveEventErr.style.display = 'block';
         return;
     }
@@ -133,6 +147,7 @@ function saveEvent() {
         type: eventType,
         position: coordinate,
         text: typewriteText,
+        hotkeys: hotkeys,
         sleep: sleepTime,
     }
     eel.createEditEvent(event, editIdx)(function(allEvents) {
@@ -152,6 +167,22 @@ function addEventToDOM(event, i) {
             <span class="editDelOpt">
                 <img title="Edit" class="cursor" onclick="edit(${i})" src="../assets/edit_black_24dp.svg">
                 <img title="Delete" class="cursor" onclick="del(${i})"  src="../assets/delete_black_24dp.svg">
+            </span>
+        </div>`;
+    } else if(event.type == 'hotkeys') {
+        var keyHTML = '';
+        if(event.hotkeys.length > 0) {keyHTML += `<kbd>${event.hotkeys[0]}</kbd>`};
+        if(event.hotkeys.length > 1) {keyHTML += `&nbsp;+&nbsp;<kbd>${event.hotkeys[1]}</kbd>`};
+        if(event.hotkeys.length > 2) {keyHTML += `&nbsp;+&nbsp;<kbd>${event.hotkeys[2]}</kbd>`};
+        var eventHTML = `
+        <div class="event_list_row">
+        <span>${event.name}</span>
+        <span>${getDisplayNameOfEvent(event.type)}</span>
+        <span style="flex-wrap: wrap;">${keyHTML}</span>
+        <span>${event.sleep} sec</span>
+            <span class="editDelOpt">
+                <img title="Edit" class="cursor" onclick="edit(${i})" src="../assets/edit_black_24dp.svg">
+                <img title="Delete" class="cursor" onclick="del(${i})" src="../assets/delete_black_24dp.svg">
             </span>
         </div>`;
     } else {
@@ -183,7 +214,7 @@ function getDisplayNameOfEvent(name) {
         return 'Triple Click';
     } else if(name == 'type_write') {
         return 'Type Write';
-    } else if(name == 'hotkey') {
+    } else if(name == 'hotkeys') {
         return 'Press Keys';
     } else if(name == 'sleep') {
         return 'Sleep';
@@ -215,14 +246,26 @@ function edit(idx) {
         document.getElementById('sleep').value = data.sleep;
         if(data.type == 'type_write') {
             document.getElementById('typewrite_text').value = data.text;
+
             document.querySelector('.pos').style.display = 'none';
             document.querySelector('.typewrite').style.display = 'flex';
+            document.querySelector('.hotkeys').style.display = 'none';
+        } else if(data.type == 'hotkeys') {
+            if(data.hotkeys.length > 0) {document.getElementById('key1').value = data.hotkeys[0]};
+            if(data.hotkeys.length > 1) {document.getElementById('key2').value = data.hotkeys[1]};
+            if(data.hotkeys.length > 2) {document.getElementById('key3').value = data.hotkeys[2]};
+
+            document.querySelector('.pos').style.display = 'none';
+            document.querySelector('.typewrite').style.display = 'none';
+            document.querySelector('.hotkeys').style.display = 'flex';
         } else {
             document.getElementById('x').innerText = data.position[0];
             document.getElementById('y').innerText = data.position[0];
             coordinate = data.position;
+            
             document.querySelector('.pos').style.display = 'flex';
             document.querySelector('.typewrite').style.display = 'none';
+            document.querySelector('.hotkeys').style.display = 'none';
         }
         
         EventPopup.style.display = "flex";

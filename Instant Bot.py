@@ -110,7 +110,6 @@ def runBot(allEvents, iterations):
     # Sleep for 3 sec before starting script and minimise the current window
     pa.sleep(1);
     pa.hotkey('win', 'down');
-    pa.hotkey('win', 'down');
     pa.sleep(2);
 
     for i in range(iterations):
@@ -118,6 +117,7 @@ def runBot(allEvents, iterations):
             type = event['type'];
             pos = event['position'];
             text = event['text'];
+            hotkeys = event['hotkeys'];
             sleep = float(event['sleep']);
             if type == 'click':
                 pa.click(pos[0], pos[1]);
@@ -129,8 +129,15 @@ def runBot(allEvents, iterations):
                 pa.tripleClick(pos[0], pos[1]);
             elif type == 'type_write':
                 pa.typewrite(text);
-            # elif type == 'hotkey':
-            #     pa.hotkey(sleep);
+            elif type == 'hotkeys':
+                key_string = '';
+                if len(hotkeys) > 0:
+                    key_string = key_string + hotkeys[0];
+                if len(hotkeys) > 1:
+                    key_string = key_string + hotkeys[1];
+                if len(hotkeys) > 2:
+                    key_string = key_string + hotkeys[2];
+                pa.hotkey(key_string);
             pa.sleep(sleep);
 
 # @eel.expose

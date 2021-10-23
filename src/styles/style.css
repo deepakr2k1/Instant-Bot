@@ -34,6 +34,10 @@ body {
     background-color: var(--bg);
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .main {
     width: max(90%, 500px);
     text-align: center;
