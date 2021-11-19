@@ -1,3 +1,5 @@
+import gevent.monkey
+gevent.monkey.patch_all()
 import eel
 from jinja2.utils import consume
 import pyautogui as pa
