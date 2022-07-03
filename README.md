@@ -5,5 +5,5 @@ A desktop application to create Bots quickly that can follow the repetitive comm
 <h4>How to get this application in your PC?</h4>
 
 1. Install _chrome browser_ in your PC
-2. Download this zip file: _https://github.com/deepakrathore2k1/Instant-Bot/archive/refs/heads/master.zip_
+2. Download this zip file: _https://github.com/deepakrathore2k1/Instant-Bot/raw/master/Instant%20Bot.zip_
 3. Run Application **Instant-Bot-master -> dist -> Instant Bot**
