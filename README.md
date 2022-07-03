@@ -6,32 +6,8 @@ A desktop application to create python Bots that can trigger different repetitiv
 <br/>
 
 <h2>Why to use Instant Bot</h2>
-<div style="display: inline-flex; line-height: 1.2; margin: 20px auto">
-    <div style="text-align:center; padding: 0 10px;">
-        <img width="100" src="./readme_assets/setup.png">
-        <h3 margin="auto">Easy to Setup</h3>
-    </div>
-    <div style="text-align:center; padding: 0 10px;">
-        <img width="100" src="./readme_assets/fast.png">
-        <h3 margin="auto">Fast</h3>
-    </div>
-    <div style="text-align:center; padding: 0 10px;">
-        <img width="100" src="./readme_assets/easy-to-use.png">
-        <h3 margin="auto" >Easy to use</h3>
-    </div>
-    <div style="text-align:center; padding: 0 10px;">
-        <img width="100" src="./readme_assets/free.png">
-        <h3 margin="auto">Free</h3>
-    </div>
-    <div style="text-align:center; padding: 0 10px;">
-        <img width="100" src="./readme_assets/safe.png">
-        <h3 margin="auto">Safe</h3>
-    </div>
-    <div style="text-align:center; padding: 0 10px;">
-        <img width="100" src="./readme_assets/offline.png">
-        <h3 margin="auto">Offline App</h3>
-    </div>
-</div><br/>
+<img width="100%" src="./readme_assets/combined.png">
+
 
 <h2>How to get this application in your PC?</h2>
 <ol>
