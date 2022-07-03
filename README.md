@@ -1,12 +1,14 @@
 <h1>Instant-Bot</h1>
 
 <h2>GUI Automation Application</h2>
-A desktop application to create python Bots that can trigger different repetitive GUI events to finish repetitive tasks quickly, by taking control on keyboard & mouse.
+<p>A desktop application to create python Bots that can trigger different repetitive GUI events to finish repetitive tasks quickly, by taking control on keyboard & mouse.</p>
 
 <br/>
 
 <h2>Why to use Instant Bot</h2>
 <img width="100%" src="./readme_assets/combined.png">
+
+<br/>
 
 <h2>How to get this application in your PC?</h2>
 <ol>
@@ -15,7 +17,9 @@ A desktop application to create python Bots that can trigger different repetitiv
     <li> Unzip Instant Bot.zip
     <li> Run <b>Instant Bot/Instant Bot.exe</b>
     <br/><b>Note: </b> Available For Windows only 
-</ol><br/>
+</ol>
+
+<br/>
 
 <h2>Tech Stack used in the Project</h2>
 <ul>
