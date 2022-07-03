@@ -8,8 +8,6 @@ A desktop application to create python Bots that can trigger different repetitiv
 <h2>Why to use Instant Bot</h2>
 <img width="100%" src="./readme_assets/combined.png">
 
-<br/>
-
 <h2>How to get this application in your PC?</h2>
 <ol>
     <li> Install _chrome browser_ in your PC (Pre-Requisite)
