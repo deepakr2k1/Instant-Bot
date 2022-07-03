@@ -1,6 +1,6 @@
 <h2> Instant-Bot </h2>
 <h4>GUI Automation Application</h4>
-A desktop application to take control on keyboard & mouse to finish repetitive tasks
+A desktop application to create Bots quickly that can follow the repetitive commands to finish repetitive tasks by taking control on keyboard & mouse.
 
 <h4>How to get this application in your PC?</h4>
 
