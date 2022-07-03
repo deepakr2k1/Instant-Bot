@@ -8,6 +8,7 @@ A desktop application to create python Bots that can trigger different repetitiv
 <h2>Why to use Instant Bot</h2>
 <img width="100%" src="./readme_assets/combined.png">
 
+<br/>
 
 <h2>How to get this application in your PC?</h2>
 <ol>
@@ -16,7 +17,9 @@ A desktop application to create python Bots that can trigger different repetitiv
     <li> Unzip Instant Bot.zip
     <li> Run <b>Instant Bot/Instant Bot.exe</b>
     <br/><b>Note: </b> Available For Windows only 
-</ol><br/>
+</ol>
+
+<br/>
 
 <h2>Tech Stack used in the Project</h2>
 <ul>
@@ -24,4 +27,6 @@ A desktop application to create python Bots that can trigger different repetitiv
     <li>PyAutoGUI: It is a Python package that works across different OS to provides the ability to simulate mouse cursor moves and clicks as well as keyboard button presses actions via python scripts.</li>
     <li>HTML, CSS, and Javascript is used to create the application UI and provide the better User Experience.</li>
 </li>
-</ul><br/>
+</ul>
+
+<br/>
