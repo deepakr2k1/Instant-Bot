@@ -15,9 +15,7 @@ A desktop application to create python Bots that can trigger different repetitiv
     <li> Unzip Instant Bot.zip
     <li> Run <b>Instant Bot/Instant Bot.exe</b>
     <br/><b>Note: </b> Available For Windows only 
-</ol>
-
-<br/>
+</ol><br/>
 
 <h2>Tech Stack used in the Project</h2>
 <ul>
