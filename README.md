@@ -12,7 +12,7 @@
 
 <h2>How to get this application in your PC?</h2>
 <ol>
-    <li> Install _chrome browser_ in your PC (Pre-Requisite)
+    <li> Install Chrome browser in your PC (Pre-Requisite)
     <li> Download <a href="https://github.com/deepakrathore2k1/Instant-Bot/raw/master/Instant%20Bot.zip">Instant Bot</a> Packaged zip file. <br/>Link: <a>https://github.com/deepakrathore2k1/Instant-Bot/raw/master/Instant%20Bot.zip</a>
     <li> Unzip Instant Bot.zip
     <li> Run <b>Instant Bot/Instant Bot.exe</b>
